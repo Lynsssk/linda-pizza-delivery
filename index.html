@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- FontAwesome para os ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Tailwind CSS via CDN (Carrega direto da internet para funcionar em 1 só arquivo) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Linda Pizza Delivery</title>
+</head>
+<body class="bg-gray-100">
+    
+    <!--HEADER-->
+    <header class="w-full h-[420px] bg-zinc-900">
+        <div class="w-full h-full flex flex-col justify-center items-center">
+            <img src="Asets/Logo Linda Pizza Delivery.png" alt="Logo Linda Pizza Delivery" class="w-32 h-32 rounded-full shadow-lg hover:scale-110 duration-200 object-cover" />
+            <h1 class="text-3xl mt-4 mb-2 font-bold text-white">Linda Pizza Delivery</h1>
+            <span class="text-white font-medium">Rua Da Aurora - Centro, Pernambuco</span>
+            <div class="bg-green-600 px-4 py-1 rounded-lg mt-5" id="date-span">
+                <span class="text-white font-medium">Terça á Domingo - 17:30 as 22:00</span>
+            </div>
+        </div>
+    </header>
+    <!-- FIM HEADER-->
+     
+    <h2 class="text-2xl md:text-3xl font-bold text-center mt-5 mb-3 text-gray-800">Conheça nosso menu</h2>
+
+    <!--INICIO MENU COMPLETO-->
+    <div id="menu">
+        
+        <!--Inicio Combos-->
+        <main class="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10 mx-auto max-w-7xl px-4 mb-16 mt-6">
+            <!--Combo 1-->
+            <div class="flex gap-2 bg-white p-3 rounded-lg shadow-sm">
+                <img src="./Asets/promoção clone.png" alt="Clone" class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-200 object-cover">
+                <div class="flex-1">
+                    <p class="font-bold text-gray-800">Promoção Clone - 2 Pizzas G + 1 Antartica de 1L</p>
+                    <p class="text-sm mt-1 text-gray-600">Sabores: Mussarela, Frango, Calabresa, Presunto e Portuguesa</p>
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg text-green-600">R$ 65</p>
+                        <button class="bg-gray-900 px-5 py-1 rounded add-to-cart-btn hover:bg-gray-700 transition" data-name="Promoção Clone" data-price="65">
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>     
+            <!--Combo 2-->
+            <div class="flex gap-2 bg-white p-3 rounded-lg shadow-sm">
+                <img src="./Asets/Combo.png" alt="Combo" class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-200 object-cover">
+                <div class="flex-1">
+                    <p class="font-bold text-gray-800">Promoção Combo - 1 Pizza G + 1 Antartica de 1L</p>
+                    <p class="text-sm mt-1 text-gray-600">Sabores: Mussarela, Frango, Calabresa, Presunto e Portuguesa</p>
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg text-green-600">R$ 47</p>
+                        <button class="bg-gray-900 px-5 py-1 rounded add-to-cart-btn hover:bg-gray-700 transition" data-name="Promoção Combo" data-price="47">
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!--Fim Combos-->
+
+        <div class="mx-auto max-w-7xl px-4 my-6">
+            <h2 class="font-bold text-2xl md:text-3xl text-gray-800 border-b-2 border-red-500 inline-block pb-1">Pizzas Tradicionais e Especiais</h2>
+        </div>
+
+        <main class="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10 mx-auto max-w-7xl px-4 mb-16">
+            <!-- Pizza Mussarela -->
+            <div class="flex gap-2 bg-white p-3 rounded-lg shadow-sm">
+                <img src="./Asets/Pizza-de-mussarela.png" alt="Pizza de Mussarela" class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-200 object-cover">
+                <div class="flex-1">
+                    <p class="font-bold text-gray-800">Pizza de Mussarela</p>
+                    <p class="text-sm text-gray-600">Mussarela, tomate, cebola, azeitona e orégano</p>
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg text-green-600">R$ 45</p>
+                        <button class="bg-gray-900 px-5 py-1 rounded add-to-cart-btn hover:bg-gray-700 transition" data-name="Pizza de Mussarela" data-price="45">
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Pizza Frango -->
+            <div class="flex gap-2 bg-white p-3 rounded-lg shadow-sm">
+                <img src="./Asets/Pizza-de-frango.png" alt="Pizza de Frango" class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-200 object-cover">
+                <div class="flex-1">
+                    <p class="font-bold text-gray-800">Pizza de Frango</p>
+                    <p class="text-sm text-gray-600">Mussarela, Frango, cebola, tomate, azeitona e orégano</p>
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg text-green-600">R$ 45</p>
+                        <button class="bg-gray-900 px-5 py-1 rounded add-to-cart-btn hover:bg-gray-700 transition" data-name="Pizza de Frango" data-price="45">
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Pizza Calabresa -->
+            <div class="flex gap-2 bg-white p-3 rounded-lg shadow-sm">
+                <img src="./Asets/Pizza-de-calabresa.png" alt="Pizza de Calabresa" class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-200 object-cover">
+                <div class="flex-1">
+                    <p class="font-bold text-gray-800">Pizza de Calabresa</p>
+                    <p class="text-sm text-gray-600">Mussarela, Calabresa, cebola, azeitona e orégano</p>
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg text-green-600">R$ 45</p>
+                        <button class="bg-gray-900 px-5 py-1 rounded add-to-cart-btn hover:bg-gray-700 transition" data-name="Pizza de Calabresa" data-price="45">
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Pizza Presunto -->
+            <div class="flex gap-2 bg-white p-3 rounded-lg shadow-sm">
+                <img src="./Asets/Pizza-de-presunto.png" alt="Pizza de presunto" class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-200 object-cover">
+                <div class="flex-1">
+                    <p class="font-bold text-gray-800">Pizza de presunto</p>
+                    <p class="text-sm text-gray-600">Mussarela, presunto, milho, tomate, cebola, azeitona e orégano</p>
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg text-green-600">R$ 45</p>
+                        <button class="bg-gray-900 px-5 py-1 rounded add-to-cart-btn hover:bg-gray-700 transition" data-name="Pizza de presunto" data-price="45">
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Pizza Frango com Cheddar -->
+            <div class="flex gap-2 bg-white p-3 rounded-lg shadow-sm">
+                <img src="./Asets/Pizza-de-frango com-cheddar.png" alt="Pizza de Frango com Cheddar" class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-200 object-cover">
+                <div class="flex-1">
+                    <p class="font-bold text-gray-800">Pizza de Frango com Cheddar</p>
+                    <p class="text-sm text-gray-600">Mussarela, Frango, Cheddar, tomate, cebola, azeitona e orégano</p>
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg text-green-600">R$ 48</p>
+                        <button class="bg-gray-900 px-5 py-1 rounded add-to-cart-btn hover:bg-gray-700 transition" data-name="Pizza de Frango com Cheddar" data-price="48">
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Pizza Frango com Catupiry -->
+            <div class="flex gap-2 bg-white p-3 rounded-lg shadow-sm">
+                <img src="./Asets/Pizza-de-frango com-Catupiry.png" alt="Pizza de Frango com Catupiry" class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-200 object-cover">
+                <div class="flex-1">
+                    <p class="font-bold text-gray-800">Pizza de Frango com Catupiry</p>
+                    <p class="text-sm text-gray-600">Mussarela, Frango, Catupiry, tomate, cebola, azeitona e orégano</p>
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg text-green-600">R$ 48</p>
+                        <button class="bg-gray-900 px-5 py-1 rounded add-to-cart-btn hover:bg-gray-700 transition" data-name="Pizza de Frango com Catupiry" data-price="48">
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Pizza Bacon -->
+            <div class="flex gap-2 bg-white p-3 rounded-lg shadow-sm">
+                <img src="./Asets/Pizza-de-bacon.png" alt="Pizza de Bacon" class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-200 object-cover">
+                <div class="flex-1">
+                    <p class="font-bold text-gray-800">Pizza de Bacon</p>
+                    <p class="text-sm text-gray-600">Mussarela, Bacon, cebola, azeitona e orégano</p>
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg text-green-600">R$ 50</p>
+                        <button class="bg-gray-900 px-5 py-1 rounded add-to-cart-btn hover:bg-gray-700 transition" data-name="Pizza de Bacon" data-price="50">
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Pizza Charque -->
+            <div class="flex gap-2 bg-white p-3 rounded-lg shadow-sm">
+                <img src="./Asets/pizza-de-charque.png" alt="Pizza de Charque" class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-200 object-cover">
+                <div class="flex-1">
+                    <p class="font-bold text-gray-800">Pizza de Charque</p>
+                    <p class="text-sm text-gray-600">Mussarela, Charque, milho, cebola, azeitona e orégano</p>
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg text-green-600">R$ 50</p>
+                        <button class="bg-gray-900 px-5 py-1 rounded add-to-cart-btn hover:bg-gray-700 transition" data-name="Pizza de Charque" data-price="50">
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Pizza Pepperoni -->
+            <div class="flex gap-2 bg-white p-3 rounded-lg shadow-sm">
+                <img src="./Asets/Pizza-de-pepperoni.jpeg" alt="Pizza de Pepperoni" class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-200 object-cover">
+                <div class="flex-1">
+                    <p class="font-bold text-gray-800">Pizza de Pepperoni</p>
+                    <p class="text-sm text-gray-600">Mussarela, Pepperoni, azeitona e orégano</p>
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg text-green-600">R$ 45</p>
+                        <button class="bg-gray-900 px-5 py-1 rounded add-to-cart-btn hover:bg-gray-700 transition" data-name="Pizza de Pepperoni" data-price="45">
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Pizza Camarão -->
+            <div class="flex gap-2 bg-white p-3 rounded-lg shadow-sm">
+                <img src="./Asets/Pizza-de-camarao.jpeg" alt="Pizza de Pepperoni" class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-200 object-cover">
+                <div class="flex-1">
+                    <p class="font-bold text-gray-800">Pizza de Camarão</p>
+                    <p class="text-sm text-gray-600">Molho especial, Mussarela, Camarão, azeitona e orégano</p>
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg text-green-600">R$ 80</p>
+                        <button class="bg-gray-900 px-5 py-1 rounded add-to-cart-btn hover:bg-gray-700 transition" data-name="Pizza de Camarão" data-price="80">
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- SEÇÃO DE BEBIDAS -->
+        <div class="mx-auto max-w-7xl px-4 my-6">
+            <h2 class="font-bold text-2xl md:text-3xl text-gray-800 border-b-2 border-red-500 inline-block pb-1">Bebidas</h2>
+        </div>
+
+        <main class="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10 mx-auto max-w-7xl px-4 mb-24">
+            <!-- Bebida 1 -->
+            <div class="flex gap-2 bg-white p-3 rounded-lg shadow-sm">
+                <img src="./Asets/Antartica_1l.png" alt="Antartica de 1L" class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-200 object-cover">
+                <div class="flex-1">
+                    <p class="font-bold text-gray-800">Guaraná Antartica de 1L</p>
+                    <p class="text-sm text-gray-600">Refrigerante gelado 1 Litro</p>
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg text-green-600">R$ 9</p>
+                        <button class="bg-gray-900 px-5 py-1 rounded add-to-cart-btn hover:bg-gray-700 transition" data-name="Antártica de 1L" data-price="9">
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Bebida 2 -->
+            <div class="flex gap-2 bg-white p-3 rounded-lg shadow-sm">
+                <img src="./Asets/Antartica_2L.png" alt="Antartica de 2L" class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-200 object-cover">
+                <div class="flex-1">
+                    <p class="font-bold text-gray-800">Guaraná Antartica de 2L</p>
+                    <p class="text-sm text-gray-600">Refrigerante gelado 2 Litros</p>
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg text-green-600">R$ 14</p>
+                        <button class="bg-gray-900 px-5 py-1 rounded add-to-cart-btn hover:bg-gray-700 transition" data-name="Antártica de 2L" data-price="14">
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Bebida 3 -->
+            <div class="flex gap-2 bg-white p-3 rounded-lg shadow-sm">
+                <img src="./Asets/Coca_2l.png" alt="Coca-cola de 2L" class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-200 object-cover">
+                <div class="flex-1">
+                    <p class="font-bold text-gray-800">Coca-cola de 2L</p>
+                    <p class="text-sm text-gray-600">Refrigerante gelado 2 Litros</p>
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg text-green-600">R$ 16</p>
+                        <button class="bg-gray-900 px-5 py-1 rounded add-to-cart-btn hover:bg-gray-700 transition" data-name="Coca-cola de 2L" data-price="16">
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+    </div>
+    <!--FIM MENU COMPLETO-->
+
+    <!-- MODAL CART -->
+    <div class="bg-black/60 w-full h-full fixed top-0 left-0 z-[99] items-center justify-center hidden" id="cart-modal">
+        <div class="bg-white p-5 rounded-md min-w-[90%] md:min-w-[600px] max-h-[90vh] overflow-y-auto">
+            <h2 class="text-center font-bold text-2xl mb-4 text-gray-800">Meu Carrinho</h2>
+
+            <!-- Lista de itens do carrinho -->
+            <div id="cart-items" class="flex justify-between mb-4 flex-col text-gray-800"></div>
+
+            <!-- TOTAIS ORGANIZADOS -->
+            <div class="border-t pt-4 space-y-1 text-gray-800 mb-6">
+                <div class="flex justify-between"><span>Subtotal:</span> <span>R$ <span id="cart-subtotal">0,00</span></span></div>
+                <div class="flex justify-between text-blue-600"><span>Taxa de Entrega:</span> <span>R$ <span id="delivery-fee-display">0,00</span></span></div>
+                <!-- Div do acréscimo escondida por padrão -->
+                <div class="flex justify-between text-red-500 hidden" id="card-fee-display"><span>Acréscimo Cartão:</span> <span>R$ 3,00</span></div>
+                <div class="flex justify-between font-bold text-xl border-t pt-2 mt-2"><span>Total:</span> <span class="text-green-600">R$ <span id="cart-total">0,00</span></span></div>
+            </div>
+
+            <!-- DADOS DE ENTREGA -->
+            <div class="space-y-3 mb-6">
+                <h3 class="font-bold text-lg text-gray-800 border-b pb-1">1. Endereço de Entrega</h3>
+                
+                <div>
+                    <label class="font-bold block text-sm mb-1">Bairro:</label>
+                    <select id="neighborhood" class="w-full border-2 p-2 rounded text-sm outline-none focus:border-red-500">
+                        <option value="0" data-fee="0">Selecione seu bairro...</option>
+                        <option value="CENTRO" data-fee="6">CENTRO - R$ 6,00</option>
+                        <option value="TORRINHA" data-fee="7">TORRINHA - R$ 7,00</option>
+                        <option value="CRUZEIRO" data-fee="7">CRUZEIRO - R$ 7,00</option>                
+                        <option value="DESTILARIA" data-fee="8">DESTILARIA - R$ 8,00</option>
+                        <option value="SANTO INÁCIO" data-fee="8">SANTO INÁCIO - R$ 8,00</option>
+                        <option value="MAURITI" data-fee="8">MAURITI - R$ 8,00</option>
+                        <option value="ALTO DO MIRANDA" data-fee="8">ALTO DO MIRANDA - R$ 8,00</option>
+                        <option value="MALAQUIAS" data-fee="8">MALAQUIAS - R$ 8,00</option>
+                        <option value="SAPUCAIA" data-fee="8">SAPUCAIA - R$ 8,00</option>
+                        <option value="COHAB" data-fee="8">COHAB - R$ 8,00</option>
+                        <option value="CHARNEQUINHA" data-fee="8">CHARNEQUINHA - R$ 8,00</option>
+                        <option value="VILA SOCIAL" data-fee="8">VILA SOCIAL - R$ 8,00</option>
+                        <option value="BAIRRO" data-fee="8">BAIRRO - R$ 8,00</option>
+                        <option value="BELA VISTA" data-fee="8">BELA VISTA - R$ 8,00</option>
+                        <option value="VILA CLAUDETE" data-fee="9">VILA CLAUDETE - R$ 9,00</option>
+                        <option value="CASA NOVAS" data-fee="9">CASA NOVAS - R$ 9,00</option>
+                        <option value="GARAPU" data-fee="9">GARAPU - R$ 9,00</option>
+                        <option value="GARAPU 2" data-fee="10">GARAPU 2 - R$ 10,00</option>
+                        <option value="ANTIGA CONEST" data-fee="10">ANTIGA CONEST - R$ 10,00</option>
+                        <option value="VILA SESI" data-fee="10">VILA SESI - R$ 10,00</option>
+                        <option value="PISTA PRETA" data-fee="12">PISTA PRETA - R$ 12,00</option>
+                        <option value="CONE" data-fee="12">CONE - R$ 12,00</option>
+                        <option value="PIRAPAMA" data-fee="12">PIRAPAMA - R$ 12,00</option>
+                        <option value="CHARNECA" data-fee="12">CHARNECA - R$ 12,00</option>
+                        <option value="ROSÁRIO" data-fee="12">ROSÁRIO - R$ 12,00</option>
+                        <option value="TERRAPLANAGEM" data-fee="12">TERRAPLANAGEM - R$ 12,00</option>
+                        <option value="BARBALHO 1 E 2" data-fee="12">BARBALHO 1 E 2 - R$ 12,00</option>
+                        <option value="NOVO HORIZONTE" data-fee="12">NOVO HORIZONTE - R$ 12,00</option>
+                        <option value="DHARMA VILLE" data-fee="12">DHARMA VILLE - R$ 12,00</option>
+                        <option value="ENGENHO NOVO" data-fee="15">ENGENHO NOVO - R$ 15,00</option>
+                        <option value="DOM HELDER" data-fee="15">DOM HELDER - R$ 15,00</option>
+                        <option value="ARMAZENA" data-fee="15">ARMAZENA - R$ 15,00</option>
+                        <option value="BURRAMA" data-fee="15">BURRAMA - R$ 15,00</option>
+                        <option value="AGODOAIS" data-fee="20">AGODOAIS - R$ 20,00</option>
+                        <option value="SERRARIA" data-fee="20">SERRARIA - R$ 20,00</option>
+                        <option value="PONTE" data-fee="20">PONTE - R$ 20,00</option>
+                        <option value="COCA COLA" data-fee="20">COCA COLA - R$ 20,00</option>
+                        <option value="ENSEADAS" data-fee="25">ENSEADAS - R$ 25,00</option>
+                        <option value="POSTO COTEGY" data-fee="25">POSTO COTEGY - R$ 25,00</option>
+                        <option value="MASSANGANA" data-fee="25">MASSANGANA - R$ 25,00</option>
+                        <option value="PONTEZINHA" data-fee="25">PONTEZINHA - R$ 25,00</option>
+                        <option value="GAIBU" data-fee="25">GAIBU - R$ 25,00</option>
+                        <option value="ITAPUAMA" data-fee="25">ITAPUAMA - R$ 25,00</option>
+                        <option value="MERCÊS" data-fee="25">MERCÊS - R$ 25,00</option>
+                        <option value="ENGENHO CASTELO" data-fee="25">ENGENHO CASTELO - R$ 25,00</option>
+                        <option value="PAIVA" data-fee="30">PAIVA - R$ 30,00 (+ Pedágio)</option>
+                        <option value="SUAPE PRAIA" data-fee="30">SUAPE PRAIA - R$ 30,00</option>
+                        <option value="SUAPE" data-fee="30">SUAPE - R$ 30,00 (+ Pedágio)</option>
+                        <option value="IPOJUCA" data-fee="35">IPOJUCA - R$ 35,00</option>
+                    </select>
+                </div>
+
+                <div class="flex gap-2">
+                    <div class="flex-1">
+                        <input type="text" placeholder="Rua" id="street" class="w-full border-2 p-2 rounded text-sm outline-none focus:border-red-500" />
+                    </div>
+                    <div class="w-24">
+                        <input type="text" placeholder="Nº" id="number" class="w-full border-2 p-2 rounded text-sm outline-none focus:border-red-500" />
+                    </div>
+                </div>
+
+                <div>
+                    <input type="text" placeholder="Ponto de Referência / Complemento (Opcional)" id="address" class="w-full border-2 p-2 rounded text-sm outline-none focus:border-red-500"/>
+                </div>
+            </div>
+
+            <!-- FORMA DE PAGAMENTO -->
+            <div class="space-y-3">
+                <h3 class="font-bold text-lg text-gray-800 border-b pb-1">2. Forma de Pagamento</h3>
+                <div>
+                    <select id="payment-method" class="w-full border-2 p-2 rounded my-1 text-gray-800 text-sm outline-none focus:border-red-500">
+                        <option value="">Selecione...</option>
+                        <option value="Pix">Pix (Chave via WhatsApp)</option>
+                        <option value="Cartão">Cartão (Acréscimo de R$ 3,00)</option>
+                        <option value="Dinheiro">Dinheiro</option>
+                    </select>
+                    <p class="text-red-500 hidden text-sm font-semibold" id="payment-warn">Selecione uma forma de pagamento!</p>
+                </div>
+
+                <!-- Campo de Troco Oculto -->
+                <div id="change-wrapper" class="hidden">
+                    <p class="font-bold text-green-600 text-sm">Precisa de troco para quanto?</p>
+                    <input type="number" placeholder="Ex: 50" id="change-amount" class="w-full border-2 border-green-500 p-2 rounded my-1 text-gray-800 outline-none"/>
+                </div>
+            </div>
+
+            <!-- Botões -->
+            <div class="flex items-center justify-between mt-6 w-full">
+                <button id="close-modal-btn" class="font-bold text-gray-600 hover:text-red-500 transition">Fechar</button>
+                <button id="checkout-btn" class="bg-green-500 text-white px-4 py-2 rounded font-bold hover:bg-green-600 transition shadow-md">Finalizar pedido</button>
+            </div>
+        </div>
+    </div>
+    <!-- FIM MODAL CART -->
+
+    <!-- FOOTER PARA ABRIR CARRINHO -->
+    <footer class="w-full bg-red-500 py-3 fixed bottom-0 z-40 flex items-center justify-center cursor-pointer shadow-[0_-5px_15px_rgba(0,0,0,0.2)]" id="cart-footer">
+        <button class="flex items-center gap-2 text-white font-bold" id="cart-btn">
+            (<span id="cart-count">0</span>) Veja seu carrinho
+            <i class="fa fa-cart-shopping text-lg text-white"></i>
+        </button>
+    </footer>
+
+    <!-- SCRIPT JAVASCRIPT EMBUTIDO -->
+    <script>
+    const cartModal = document.getElementById("cart-modal");
+    const cartFooter = document.getElementById("cart-footer");
+    const cartBtn = document.getElementById("cart-btn");
+    const closeModalBtn = document.getElementById("close-modal-btn");
+    const cartItemsContainer = document.getElementById("cart-items");
+    
+    // Displays de Preço
+    const cartSubtotalDisp = document.getElementById("cart-subtotal");
+    const cartDeliveryDisp = document.getElementById("delivery-fee-display");
+    const cardFeeDisp = document.getElementById("card-fee-display");
+    const cartTotal = document.getElementById("cart-total");
+    const cartCounter = document.getElementById("cart-count");
+    
+    // Campos de Endereço e Pagamento
+    const neighborhoodSelect = document.getElementById("neighborhood");
+    const streetInput = document.getElementById("street");
+    const numberInput = document.getElementById("number");
+    const addressInput = document.getElementById("address"); 
+    
+    const paymentMethod = document.getElementById("payment-method");
+    const paymentWarn = document.getElementById("payment-warn");
+    const changeWrapper = document.getElementById("change-wrapper");
+    const changeAmount = document.getElementById("change-amount");
+    const checkoutBtn = document.getElementById("checkout-btn");
+
+    let cart = [];
+    let deliveryFee = 0;
+    let cardFee = 0; // Nova variável para a taxa do cartão
+
+    // Abrir e fechar modal
+    cartFooter.addEventListener("click", () => {
+        updateCartModal();
+        cartModal.style.display = "flex";
+    });
+    
+    closeModalBtn.addEventListener("click", () => {
+        cartModal.style.display = "none";
+    });
+    
+    cartModal.addEventListener("click", (event) => {
+        if(event.target === cartModal){
+            cartModal.style.display = "none";
+        }
+    });
+
+    // ATUALIZAR TAXA DE ENTREGA
+    neighborhoodSelect.addEventListener("change", () => {
+        const selectedOption = neighborhoodSelect.options[neighborhoodSelect.selectedIndex];
+        deliveryFee = parseFloat(selectedOption.getAttribute("data-fee"));
+        updateCartModal();
+    });
+
+    // LÓGICA DE FORMA DE PAGAMENTO (TROCO E TAXA DE CARTÃO)
+    paymentMethod.addEventListener("change", (event) => {
+        const method = event.target.value;
+        
+        // Exibir/Esconder Troco
+        if (method === "Dinheiro") {
+            changeWrapper.style.display = "block";
+        } else {
+            changeWrapper.style.display = "none";
+            changeAmount.value = ""; 
+        }
+
+        // Aplicar Taxa de Cartão
+        if (method === "Cartão") {
+            cardFee = 3;
+            cardFeeDisp.classList.remove("hidden");
+        } else {
+            cardFee = 0;
+            cardFeeDisp.classList.add("hidden");
+        }
+
+        updateCartModal(); // Atualiza o carrinho para somar/remover os R$ 3,00
+    });
+
+    // Adicionar ao carrinho
+    document.addEventListener("click", (event) => {
+        let parentButton = event.target.closest(".add-to-cart-btn");
+        if(parentButton){
+            const name = parentButton.getAttribute("data-name");
+            const price = parseFloat(parentButton.getAttribute("data-price"));
+            addToCart(name, price);
+        }
+    });
+
+    function addToCart(name, price) {
+        const existingItem = cart.find(item => item.name === name);
+        if(existingItem){
+            existingItem.quantity += 1;
+        } else {
+            cart.push({ name, price, quantity: 1 });
+        }
+        updateCartModal();
+    }
+
+    // Atualizar exibição do carrinho
+    function updateCartModal() {
+        cartItemsContainer.innerHTML = "";
+        let subtotal = 0;
+
+        cart.forEach(item => {
+            const cartItemElement = document.createElement("div");
+            cartItemElement.classList.add("flex", "justify-between", "mb-4", "flex-col");
+            
+            cartItemElement.innerHTML = `
+                <div class="flex items-center justify-between border-b pb-2">
+                    <div>
+                        <p class="font-bold">${item.name}</p>
+                        <p class="text-sm text-gray-600">Qtd: ${item.quantity}</p>
+                        <p class="font-medium mt-1">R$ ${item.price.toFixed(2)}</p>
+                    </div>
+                    <button class="remove-from-cart-btn text-red-500 font-bold border border-red-500 rounded px-2 hover:bg-red-500 hover:text-white transition" data-name="${item.name}">
+                        Remover
+                    </button>
+                </div>
+            `;
+            subtotal += item.price * item.quantity;
+            cartItemsContainer.appendChild(cartItemElement);
+        });
+
+        // O Total agora soma o subtotal, a entrega e a taxa do cartão
+        const total = subtotal + deliveryFee + cardFee;
+
+        // Atualiza os textos na tela
+        cartSubtotalDisp.textContent = subtotal.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
+        cartDeliveryDisp.textContent = deliveryFee.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
+        cartTotal.textContent = total.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
+
+        // Atualiza o contador do rodapé
+        cartCounter.textContent = cart.reduce((acc, item) => acc + item.quantity, 0);
+    }
+
+    // Remover do carrinho
+    cartItemsContainer.addEventListener("click", (event) => {
+        if(event.target.classList.contains("remove-from-cart-btn")){
+            const name = event.target.getAttribute("data-name");
+            removeItemCart(name);
+        }
+    });
+
+    function removeItemCart(name){
+        const index = cart.findIndex(item => item.name === name);
+        if(index !== -1){
+            const item = cart[index];
+            if(item.quantity > 1){
+                item.quantity -= 1;
+            } else {
+                cart.splice(index, 1);
+            }
+            updateCartModal();
+        }
+    }
+
+    // Finalizar Pedido - WhatsApp
+    checkoutBtn.addEventListener("click", function() {
+        if(cart.length === 0) return;
+
+        // Validação de Bairro
+        if (neighborhoodSelect.value === "0") {
+            alert("Por favor, selecione o seu bairro!");
+            neighborhoodSelect.classList.add("border-red-500");
+            return;
+        } else {
+            neighborhoodSelect.classList.remove("border-red-500");
+        }
+
+        // Validação de Rua e Número
+        if (streetInput.value.trim() === "" || numberInput.value.trim() === "") {
+            alert("Por favor, preencha a rua e o número da sua residência!");
+            streetInput.classList.add("border-red-500");
+            numberInput.classList.add("border-red-500");
+            return;
+        } else {
+            streetInput.classList.remove("border-red-500");
+            numberInput.classList.remove("border-red-500");
+        }
+
+        // Validação de Pagamento
+        if(paymentMethod.value === ""){
+            paymentWarn.classList.remove("hidden");
+            paymentMethod.classList.add("border-red-500");
+            return;
+        }
+        paymentWarn.classList.add("hidden");
+        paymentMethod.classList.remove("border-red-500");
+
+        // Montar Itens do Pedido
+        const cartItemsText = cart.map((item) => {
+            return `*${item.quantity}x* ${item.name} (R$ ${item.price.toFixed(2)})`;
+        }).join("\n");
+
+        // Lógica do Pagamento para a Mensagem
+        let paymentText = `Forma de Pagamento: *${paymentMethod.value}*`;
+        let cardFeeText = "";
+
+        if (paymentMethod.value === "Dinheiro") {
+            if (changeAmount.value && parseFloat(changeAmount.value) > 0) {
+                paymentText += `\n*Precisa de troco para:* R$ ${parseFloat(changeAmount.value).toFixed(2)}`;
+            } else {
+                paymentText += `\n*(Não precisa de troco)*`;
+            }
+        } else if (paymentMethod.value === "Cartão") {
+            cardFeeText = `\n*Acréscimo Cartão:* R$ 3,00`;
+        }
+
+        // Nome do Bairro 
+        const bairroNome = neighborhoodSelect.options[neighborhoodSelect.selectedIndex].text.split(" -")[0];
+        const complemento = addressInput.value.trim();
+
+        // Valores para a mensagem
+        const subtotalMsg = cartSubtotalDisp.textContent;
+        const deliveryMsg = cartDeliveryDisp.textContent;
+        const totalMsg = cartTotal.textContent;
+
+        // Montar a mensagem final
+        const message = `🍕 *NOVO PEDIDO - LINDA PIZZA* 🍕\n\n` +
+                        `*ITENS:*\n${cartItemsText}\n\n` +
+                        `*Subtotal:* R$ ${subtotalMsg}\n` +
+                        `*Taxa de Entrega:* R$ ${deliveryMsg}` +
+                        `${cardFeeText}\n` +
+                        `*TOTAL A PAGAR:* *R$ ${totalMsg}*\n\n` +
+                        `*ENDEREÇO DE ENTREGA:*\n` +
+                        `Bairro: ${bairroNome}\n` +
+                        `Rua: ${streetInput.value}, Nº ${numberInput.value}\n` +
+                        (complemento ? `Ref/Complemento: ${complemento}\n\n` : `\n`) +
+                        `*PAGAMENTO:*\n${paymentText}`;
+
+        // REDIRECIONAR PARA O WHATSAPP
+        const phone = "5581987225317"; 
+        window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, "_blank");
+
+        // Limpar o formulário e o carrinho após o envio
+        cart = [];
+        addressInput.value = "";
+        streetInput.value = "";
+        numberInput.value = "";
+        neighborhoodSelect.value = "0";
+        paymentMethod.value = "";
+        changeAmount.value = "";
+        changeWrapper.style.display = "none";
+        deliveryFee = 0;
+        cardFee = 0;
+        cardFeeDisp.classList.add("hidden");
+        
+        updateCartModal();
+        cartModal.style.display = "none"; 
+    });
+</script>
+</body>
+</html>
