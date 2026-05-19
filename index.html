@@ -536,13 +536,12 @@
     const closeModalBtn = document.getElementById("close-modal-btn");
     const cartItemsContainer = document.getElementById("cart-items");
     
-    
+
     const cartSubtotalDisp = document.getElementById("cart-subtotal");
     const cartDeliveryDisp = document.getElementById("delivery-fee-display");
     const cardFeeDisp = document.getElementById("card-fee-display");
     const cartTotal = document.getElementById("cart-total");
     const cartCounter = document.getElementById("cart-count");
-    
     
     const radioEntrega = document.getElementById("radio-entrega");
     const radioRetirada = document.getElementById("radio-retirada");
@@ -563,7 +562,6 @@
     let deliveryFee = 0;
     let cardFee = 0;
 
-    
     cartFooter.addEventListener("click", () => {
         updateCartModal();
         cartModal.style.display = "flex";
@@ -579,7 +577,7 @@
         }
     });
 
-    
+
     function handleDeliveryTypeChange() {
         if (radioRetirada.checked) {
             addressFields.classList.add("hidden"); 
@@ -595,7 +593,6 @@
     radioEntrega.addEventListener("change", handleDeliveryTypeChange);
     radioRetirada.addEventListener("change", handleDeliveryTypeChange);
 
-    
     neighborhoodSelect.addEventListener("change", () => {
         if (radioEntrega.checked) {
             const selectedOption = neighborhoodSelect.options[neighborhoodSelect.selectedIndex];
@@ -604,7 +601,6 @@
         }
     });
 
-    
     paymentMethod.addEventListener("change", (event) => {
         const method = event.target.value;
         
@@ -626,41 +622,38 @@
         updateCartModal();
     });
 
-    
+
     document.addEventListener("click", (event) => {
         let parentButton = event.target.closest(".add-to-cart-btn");
         if(parentButton){
             const name = parentButton.getAttribute("data-name");
             const price = parseFloat(parentButton.getAttribute("data-price"));
             
-            
-            const productCard = parentButton.closest(".flex.gap-2");
+            const productCard = parentButton.closest(".bg-white");
             
             let finalName = name;
             let finalPrice = price;
 
-            
             if (name === "Promoção Clone") {
-                const flavor1 = productCard.querySelector(".clone-flavor-1").value;
-                const flavor2 = productCard.querySelector(".clone-flavor-2").value;
+                const flavor1Select = productCard.querySelector(".clone-flavor-1");
+                const flavor2Select = productCard.querySelector(".clone-flavor-2");
                 
-                if (!flavor1 || !flavor2) {
+                if (!flavor1Select.value || !flavor2Select.value) {
                     alert("Por favor, selecione os dois sabores para a Promoção Clone!");
-                    return;
+                    return; 
                 }
-                finalName = `Promoção Clone (${flavor1} e ${flavor2})`;
+                finalName = `Promoção Clone (${flavor1Select.value} e ${flavor2Select.value})`;
                 
             } else if (name === "Promoção Combo") {
-                const flavor = productCard.querySelector(".combo-flavor").value;
+                const flavorSelect = productCard.querySelector(".combo-flavor");
                 
-                if (!flavor) {
+                if (!flavorSelect.value) {
                     alert("Por favor, selecione o sabor da pizza para o Combo!");
-                    return;
+                    return; // Para a execução e não adiciona ao carrinho
                 }
-                finalName = `Promoção Combo (${flavor})`;
+                finalName = `Promoção Combo (${flavorSelect.value})`;
                 
             } else {
-                
                 const extraSelect = productCard.querySelector(".pizza-extra");
                 if (extraSelect && extraSelect.value !== "Nenhum") {
                     const extraName = extraSelect.value;
@@ -774,7 +767,6 @@
             return `*${item.quantity}x* ${item.name} (R$ ${item.price.toFixed(2)})`;
         }).join("\n");
 
-        
         let paymentText = `Forma de Pagamento: *${paymentMethod.value}*`;
         let cardFeeText = "";
 
@@ -800,7 +792,7 @@
                         (complemento ? `Ref/Complemento: ${complemento}\n` : `\n`);
         }
 
-        
+      
         const subtotalMsg = cartSubtotalDisp.textContent;
         const deliveryMsg = cartDeliveryDisp.textContent;
         const totalMsg = cartTotal.textContent;
@@ -819,7 +811,6 @@
         const phone = "5581987225317"; 
         window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, "_blank");
 
-       
         cart = [];
         addressInput.value = "";
         streetInput.value = "";
